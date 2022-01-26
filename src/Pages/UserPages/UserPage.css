@@ -1,3 +1,12 @@
 .fa-star{
     color: #02133c;
 }
+.share-row{
+    background: rgba(0,0,0,0.5) url('../../Image/sharebanner.jpg');
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 50vh;
+    width: 100%;
+}

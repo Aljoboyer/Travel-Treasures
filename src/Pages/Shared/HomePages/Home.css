@@ -45,9 +45,23 @@
     color: white;
     border-radius: 10px;
 }
-/* .side-text:hover{
-    background-color: #02133c;
-    color: white;
-    border-radius: 10px;
-    transition: 0.8s ease-in-out;
-} */
+.blogbtn{
+    border: solid #02133c 2px;
+    border-radius: 5px;
+    padding: 5px 15px 5px 15px; 
+}
+.blogimg{
+    width: 300px;
+    height: 250px;
+}
+.subscribe-row{
+    background: rgba(0,0,0,0.2) url('../../../Image/search-background.jpg');
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 60vh;
+}
+.inputss{
+    height: 55px;
+}

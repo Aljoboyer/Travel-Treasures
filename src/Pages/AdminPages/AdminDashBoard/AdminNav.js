@@ -3,20 +3,15 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 
 const AdminNav = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Container>
-            <Navbar.Brand href="#home">Admin DashBoard</Navbar.Brand>
+        <Navbar collapseOnSelect expand="lg" className='navrow'>
+        <Container className='pt-3 pb-3 '>
+            <Navbar.Brand > <span  className='text-light fw-bold regular-family fs-3'>Admin DashBoard</span> </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
-                <Nav.Link >Home</Nav.Link>
-                <Nav.Link >Admin DashBoard</Nav.Link>
                 </Nav>
                 <Nav>
-                <Nav.Link href="#deets">More deets</Nav.Link>
-                <Nav.Link eventKey={2} href="#memes">
-                    Dank memes
-                </Nav.Link>
+           
                 </Nav>
             </Navbar.Collapse>
         </Container>

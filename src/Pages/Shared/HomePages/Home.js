@@ -4,6 +4,7 @@ import AllBlog from './Allblogs/Allblogs';
 import HomeSlider from './HomeSlider/HomeSlider';
 import NavbarRow from './Navbars/NavbarRow';
 import Navbars from './Navbars/Navbars';
+import Subscribe from './Subscribe/Subscribe';
 
 const Home = () => {
     return (
@@ -27,6 +28,7 @@ const Home = () => {
                 </Col>
             </Row>
             <AllBlog></AllBlog>
+            <Subscribe></Subscribe>
         </Row>
     );
 };

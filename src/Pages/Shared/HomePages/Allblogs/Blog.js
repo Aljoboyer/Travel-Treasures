@@ -10,11 +10,11 @@ const Blog = ({blog}) => {
         navigate(`/blogdetails/${id}`)
     }
     return (
-        <Col lg={4} md={6} sm={12}>
+        <Col lg={3} md={6} sm={12}>
         <Card onClick={() => OnClickHandler(blog._id)} className="blog-cards">
-            <Card.Img className="img-fluid" variant="top" src={`data:image/jpeg;base64,${blog.img}`}  />
+            <Card.Img className="blogimg" variant="top" src={`data:image/jpeg;base64,${blog.img}`}  />
             <Card.Body>
-            <Card.Title>{blog.title}</Card.Title>
+            <Card.Title className="regular-color regular-family fw-bold">{blog.title}</Card.Title>
             {
                    blog?.rate ? <Rating  
                    initialRating={blog.rate}

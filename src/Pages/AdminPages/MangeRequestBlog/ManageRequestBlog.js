@@ -36,12 +36,13 @@ const ManageRequestBlog = () => {
                     })
                     .then(res => res.json())
                     .then(data => {
+                        setDemo(blogs)
                         Swal.fire(
                             'Blog Approved Succesfully',
                             '',
                             'success'
                           )
-                          setDemo(blogs)
+                         
                     })
                 })
             }

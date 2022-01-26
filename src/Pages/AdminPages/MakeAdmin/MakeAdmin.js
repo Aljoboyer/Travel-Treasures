@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form } from 'react-bootstrap';
+import { Form, Row } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 const MakeAdmin = () => {
     const [email, setEmail] = useState('')
@@ -28,7 +28,7 @@ const MakeAdmin = () => {
         })
     }
     return (
-        <div className="container-fluid">
+        <Row className="container-fluid">
             <h3 className="regular-color regular-family fw-bold my-4 text-center">To Make Admin Enter Email And Add</h3>
         <Form onSubmit={SubmitHandler} className='addform p-4'>
              <Form.Group controlId="formGridPassword">
@@ -37,7 +37,7 @@ const MakeAdmin = () => {
                 </Form.Group>
                 <button type="submit" className="btn btn-info fw-bold my-4">Add</button>
             </Form>
-        </div>
+        </Row>
     );
 };
 
