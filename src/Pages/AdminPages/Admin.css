@@ -1,0 +1,15 @@
+.sidetxt{
+    color: #02133c;
+    border: solid #02133c 1px;
+}
+.addform{
+    border-radius: 10px;
+    border: solid #02133c 4px ;
+}
+.regularbtn{
+    background-color: #02133c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px 5px 15px; 
+}
