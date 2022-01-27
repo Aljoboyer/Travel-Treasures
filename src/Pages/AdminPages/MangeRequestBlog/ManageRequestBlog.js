@@ -49,7 +49,7 @@ const ManageRequestBlog = () => {
         })
     }
     return (
-        <Row clasName="container-fluid">
+        <Row clasName="">
             <h1 className='regular-color regular-family fw-bold text-center my-2'>Users All Blog Request</h1>
             {
                blogs.length > 0 ? blogs.map(blog => <RequestBlog ApprovedHandler={ApprovedHandler} blog={blog}></RequestBlog>)

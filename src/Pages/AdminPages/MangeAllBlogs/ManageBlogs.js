@@ -8,7 +8,7 @@ const ManageBlogs = () => {
     const [demo, setDemo] = useState([]);
     const [editblog, setEditblog] = useState({});
     const [show, setShow] = useState(false);
-    const [img, setImg] = useState('');
+    let [img, setImg] = useState('');
 
     const imgHandler = e => {
         const data = e.target.files[0];
@@ -73,10 +73,13 @@ const ManageBlogs = () => {
     }
     const SubmitHandler = (e) => {
         e.preventDefault();
-    
+        if(!img){
+            img = editblog.img
+        }
+        console.log('img',img)
         const fd = new FormData();
         fd.append('title', editblog.title)
-        fd.append('category', editblog.category)
+        fd.append('category', editblog.category ? editblog.category : 'travel')
         fd.append('cost', editblog.cost)
         fd.append('location', editblog.location)
         fd.append('travelerinfo', editblog.travelerinfo)
@@ -99,11 +102,13 @@ const ManageBlogs = () => {
                           setShow(false);
                     })
                     .catch(error => {
-                        Swal.fire(
-                            '!',
-                            'Error!',
-                            'error'
-                          )
+                        console.log('error', error)
+
+                        // Swal.fire(
+                        //     '!',
+                        //     'Error!',
+                        //     'error'
+                        //   )
                     });
     }
     return (

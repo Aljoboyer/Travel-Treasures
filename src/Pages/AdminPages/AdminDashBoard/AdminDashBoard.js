@@ -10,10 +10,10 @@ const AdminDashBoard = () => {
     return (
         <Row className=''>
             <AdminNav></AdminNav>
-            <Col lg={2} md={4} sm={12}>
+            <Col lg={2} md={3} sm={12}>
                 <DashboardSidebar></DashboardSidebar>
             </Col>
-            <Col lg={10} md={4} sm={12}>
+            <Col lg={10} md={8} sm={12}>
                 <Outlet/>
             </Col>
         </Row>
