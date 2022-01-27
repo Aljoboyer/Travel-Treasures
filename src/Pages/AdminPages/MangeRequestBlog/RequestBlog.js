@@ -3,7 +3,7 @@ import { Col, Card } from 'react-bootstrap';
 
 const RequestBlog = ({blog, ApprovedHandler}) => {
     return (
-        <Col lg={4} md={6} sm={12}>
+        <Col lg={3} md={6} sm={12}>
             <Card>
                 <Card.Img className="blogimg" variant="top" src={`data:image/jpeg;base64,${blog.img}`} />
                 <Card.Body>

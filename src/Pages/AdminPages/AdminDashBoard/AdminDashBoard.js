@@ -8,7 +8,7 @@ import DashboardSidebar from './DashboardSidebar';
 import '../Admin.css'
 const AdminDashBoard = () => {
     return (
-        <Row className='container-fluid'>
+        <Row className=''>
             <AdminNav></AdminNav>
             <Col lg={2} md={4} sm={12}>
                 <DashboardSidebar></DashboardSidebar>
