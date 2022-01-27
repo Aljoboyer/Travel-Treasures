@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Row, Col} from 'react-bootstrap';
+import { Row, Col, Spinner} from 'react-bootstrap';
 import Blog from './Blog';
 
 const AllBlog = () => {
@@ -24,7 +24,7 @@ const AllBlog = () => {
 
     return (
         <Row className='container mx-auto g-3 my-4'>
-            <h1 className="fw-bold text-center my-4">All Blogs Here</h1>
+            <h1 className="regular-size regular-color regular-family  my-4 text-center">travler best EXPERIENCEs</h1>
             <Row className="d-flex justify-content-center">
                 <Col lg={7} md={10} sm={12}>
                     {
@@ -34,7 +34,7 @@ const AllBlog = () => {
                 </Col>
             </Row>
             {
-                blogs.map(blog => <Blog blog={blog}></Blog>)
+               blogs.length > 0 ? blogs.map(blog => <Blog blog={blog}></Blog>) : <Spinner className='mx-auto' animation="border" />
             }
         </Row>
     );

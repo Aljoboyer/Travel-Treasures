@@ -3,6 +3,7 @@ import { Row, Col , Form, Button} from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import Rating from 'react-rating';
 import Navbars from '../../Shared/HomePages/Navbars/Navbars';
+import NavbarRow from '../../Shared/HomePages/Navbars/NavbarRow';
 import '../UserPage.css'
 
 const AddYourExperience = () => {
@@ -63,7 +64,8 @@ const AddYourExperience = () => {
     }
 
     return (
-    <Row className='container-fluid'>
+    <Row className=''>
+        <NavbarRow></NavbarRow>
         <Navbars></Navbars>
         <Row className="share-row">
             <Col className="p-4 d-flex justify-content-center align-items-center text-center" lg={12} md={12} sm={12}>

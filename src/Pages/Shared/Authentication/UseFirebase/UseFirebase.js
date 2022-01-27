@@ -10,6 +10,7 @@ const useFirebase = () => {
     const [regerror, setRegerror] = useState('')
     const [logerror, setLogerror] = useState('')
     const [isloading, setIsloading] = useState(true);
+    const [isadmin, setIsadmin] = useState(false)
     const provider = new GoogleAuthProvider();
 
     //Registration using Email And Password
@@ -48,23 +49,26 @@ const useFirebase = () => {
             setLogerror(error.message)
         }).finally(() => setIsloading(false));
     }
+
     //google sign in
     const GoogleSignin = (navigate,location) => {
-        
+      
         signInWithPopup(auth, provider)
             .then((result) => {
+                
                 sendEmailVerification(auth.currentUser)
                 .then(() => {
                     // Email verification sent!
-                    // ...
+                    // ...currentUser
                 });
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 const user = result.user;
                 // ...
-                setUser(user)
+                
                 const destination = location?.state?.from || '/';
                 navigate(destination)
+                setUser(user)
             }).catch((error) => {
 
                 const errorCode = error.code;
@@ -99,6 +103,20 @@ const useFirebase = () => {
         .then(res => res.json())
         .then(data => console.log(data))
     }
+    //admin checking 
+    useEffect(() => {
+        if(user.email){
+            fetch(`http://localhost:5000/checkAdmin?email=${user.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setIsadmin(data.isadmin)
+       
+            })
+        }
+        else{
+            console.log('No Email')
+        }
+    },[user.email])
     //user Logout
     const LogoutUser = (navigate) => {
         setIsloading(true)
@@ -118,7 +136,8 @@ const useFirebase = () => {
         logerror, setLogerror,
         LogoutUser,
         isloading,
-        GoogleSignin
+        GoogleSignin,
+        isadmin, 
     }
 }
 export default useFirebase

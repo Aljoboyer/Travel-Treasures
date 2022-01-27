@@ -5,7 +5,7 @@ const MangeBlog = ({blog, EditHandler, DeleteHandler}) => {
     return (
         <Col lg={4} md={6} sm={12}>
         <Card>
-            <Card.Img className="img-fluid" variant="top" src={`data:image/jpeg;base64,${blog.img}`} />
+            <Card.Img className="blogimg" variant="top" src={`data:image/jpeg;base64,${blog.img}`} />
             <Card.Body>
             <Card.Title>{blog.title}</Card.Title>
             <Card.Text>
@@ -19,7 +19,7 @@ const MangeBlog = ({blog, EditHandler, DeleteHandler}) => {
             <button onClick={() => EditHandler(blog._id)} className='regularbtn fw-bold mx-3'>EDIT</button>
         </Card.Footer>
         </Card>
-    </Col>
+        </Col>
     );
 };
 

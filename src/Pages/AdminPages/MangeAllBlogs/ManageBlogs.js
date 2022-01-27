@@ -1,5 +1,5 @@
 import React, { useEffect , useState} from 'react';
-import { Row, Col, Modal , Button, Form} from 'react-bootstrap';
+import { Row, Col, Modal , Button, Form, Spinner} from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import MangeBlog from './MangeBlog';
 
@@ -25,7 +25,6 @@ const ManageBlogs = () => {
         setEditblog(newdata)
     }
 
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -36,8 +35,34 @@ const ManageBlogs = () => {
     },[demo])
 
     const DeleteHandler = (id) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/deleteblog/${id}`,{
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    setDemo(blogs)
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                      )
+                })
+      
+            }
+          })
 
-    }
+      
+    }   
     const EditHandler = (id) => {
         fetch(`http://localhost:5000/getBlogForEdit/${id}`)
         .then(res => res.json())
@@ -86,7 +111,8 @@ const ManageBlogs = () => {
             <Row className="justify-conent-center">
             <h1 className='regularcolor regular-family fw-bold text-center my-4'>Manage All Blog</h1>
             {
-                blogs?.map(blog => <MangeBlog blog={blog} EditHandler={EditHandler} DeleteHandler={DeleteHandler}></MangeBlog>)
+              blogs.length > 0 ?  blogs?.map(blog => <MangeBlog blog={blog} EditHandler={EditHandler} DeleteHandler={DeleteHandler}></MangeBlog>)
+              : <Spinner className='mx-auto' animation="border" />
             }
             </Row>
     <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter">

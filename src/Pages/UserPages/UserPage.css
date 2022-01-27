@@ -10,3 +10,19 @@
     height: 50vh;
     width: 100%;
 }
+.lowerexpense-row{
+    background: rgba(0,0,0,0.4) url('../../Image/comparisionbanner.jpg');
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 60vh;
+    width: 100%;
+}
+.tipsimg{
+    border-radius: 50%;
+}
+.tips-text:hover{
+    color: rgb(255, 225, 0);
+    cursor: pointer;
+}

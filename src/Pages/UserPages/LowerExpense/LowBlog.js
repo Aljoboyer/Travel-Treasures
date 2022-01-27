@@ -1,10 +1,10 @@
 import React from 'react';
-import { Col, Card} from 'react-bootstrap';
-import '../Home.css';
-import {  useNavigate } from "react-router-dom";
+import { Card, Col } from 'react-bootstrap';
 import Rating from 'react-rating';
-import useFirebase from '../../Authentication/UseFirebase/UseFirebase'
-const Blog = ({blog}) => {
+import { useNavigate } from 'react-router-dom';
+import useFirebase from '../../Shared/Authentication/UseFirebase/UseFirebase';
+
+const LowBlog = ({blog}) => {
     const {user,GoogleSignin} = useFirebase()
     const navigate = useNavigate()
     const OnClickHandler = id => {
@@ -21,7 +21,8 @@ const Blog = ({blog}) => {
             <Card.Img className="blogimg" variant="top" src={`data:image/jpeg;base64,${blog.img}`}  />
             <Card.Body>
             <Card.Title className="regular-color regular-family fw-bold">{blog.title}</Card.Title>
-            {
+            <p className='rgular-color regular-family fw-bold'>EXPENSE: {blog.cost}</p>
+                {
                    blog?.rate ? <Rating  
                    initialRating={blog.rate}
                    emptySymbol="far fa-star"
@@ -37,4 +38,4 @@ const Blog = ({blog}) => {
     );
 };
 
-export default Blog;
+export default LowBlog;

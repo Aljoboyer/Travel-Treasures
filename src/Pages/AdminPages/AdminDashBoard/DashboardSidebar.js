@@ -1,11 +1,13 @@
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
+import useFirebase from '../../Shared/Authentication/UseFirebase/UseFirebase'
 const DashboardSidebar = () => {
+    const {user,LogoutUser} = useFirebase();
+    const navigate = useNavigate()
 
     const LogOutHandler = () => {
-
+        LogoutUser(navigate)
     }
     return (
         <ListGroup>

@@ -4,7 +4,7 @@ import { Navigate, useLocation } from 'react-router';
 import useFirebase from '../Pages/Shared/Authentication/UseFirebase/UseFirebase';
 
 const Privateroute = ({children}) => {
-    const {user,isloading} = useFirebase()
+    const {user,isloading, GoogleSignin} = useFirebase()
 
     const location = useLocation()
 
@@ -16,6 +16,7 @@ const Privateroute = ({children}) => {
         {
             return children;
         }
+  
     return <Navigate to="/login" state={{from: location}} />
 };
 

@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import { Row } from 'react-bootstrap';
+import { Row, Spinner } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 import RequestBlog from './RequestBlog';
 
@@ -52,7 +52,8 @@ const ManageRequestBlog = () => {
         <Row clasName="container-fluid">
             <h1 className='regular-color regular-family fw-bold text-center my-2'>Users All Blog Request</h1>
             {
-                blogs.map(blog => <RequestBlog ApprovedHandler={ApprovedHandler} blog={blog}></RequestBlog>)
+               blogs.length > 0 ? blogs.map(blog => <RequestBlog ApprovedHandler={ApprovedHandler} blog={blog}></RequestBlog>)
+               : <Spinner className='mx-auto' animation="border" />
             }
         </Row>
     );

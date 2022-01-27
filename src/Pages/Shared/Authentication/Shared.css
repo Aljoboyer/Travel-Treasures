@@ -1,5 +1,6 @@
 .login{
-    border: solid 5px #1b2aff;
+    border: solid 5px #02133c;
+    border-radius: 20px;
 }
 .fa-google{
     color: #0a7256;

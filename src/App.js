@@ -18,6 +18,8 @@ import Login from './Pages/Shared/Authentication/Login/Login';
 import Register from './Pages/Shared/Authentication/Register/Register';
 import Privateroute from './PrivateRoute/PrivateRoute';
 import Footer from './Pages/Shared/HomePages/Footer/Footer';
+import LowerExpense from './Pages/UserPages/LowerExpense/LowerExpense';
+import TravelAdvise from './Pages/UserPages/TravelAdvise/TravelAdvise';
 
 function App() {
   return (
@@ -26,9 +28,12 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/blogdetails/:id" element={<Privateroute><BlogDetails/></Privateroute>}/>
-            <Route path="/AddYourExperience" element={<AddYourExperience></AddYourExperience>}/>
-            <Route path="/login" element={<Login/>} />
+            <Route path="/AddYourExperience" element={<Privateroute><AddYourExperience/></Privateroute>}/>
             <Route path="/register" element={<Register/>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/LowerExpense" element={<LowerExpense/>} />
+            <Route path="/TravelAdvise" element={<TravelAdvise/>} />
+
   {/* ----------------admin routes------------------- */}
             <Route path="/dashboard" element={<AdminDashBoard/>}>
                 <Route path="/dashboard" element={<DashBoardHome/>} />

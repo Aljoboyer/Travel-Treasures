@@ -1,6 +1,6 @@
 .blog-cards:hover{
-    border: solid 2px rgb(0, 110, 255);
-    transition: 0.5s ease-in-out;
+    border: solid 2px #02133c;
+    transition: 0.2s ease-in-out;
 }
 .blog-cards{
     cursor: pointer;
@@ -64,4 +64,28 @@
 }
 .inputss{
     height: 55px;
+}
+.loginbtn{
+    background-color: yellow;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    font-weight: bold;
+    font-family: 'Charm', cursive;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Playfair Display SC', serif;
+}
+.writebtn{
+    border-radius: 15px;
+    border: none;
+    background-color: white;
+    padding: 20px 30px 20px 30px;
+}
+.writeblogrow{
+    background: rgba(0,0,0,0.2) url('../../../Image/writeblog.jpg');
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 50vh;
 }

@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import Navbars from '../../HomePages/Navbars/Navbars';
 import NavbarRow from '../../HomePages/Navbars/NavbarRow';
 import useFirebase from '../UseFirebase/UseFirebase';
+import regimg from '../../../../Image/registration.jpg'
 
 const Register = () => {
     const [formdata, setFormdata] = useState({});
@@ -51,11 +52,14 @@ const Register = () => {
         <NavbarRow></NavbarRow>
         <Navbars></Navbars>
          <Row className="algin-items-center justify-content-center ">
-            <Col lg={7} sm={12} md={8} className="login my-4 p-4">
-            <h3 className="my-4 hometitle">Create Account To 
-            <span className="springtxt fw-bold">Travel Blog</span> </h3>
+         <Col lg={5} md={6} sm={12}>
+               <img className='img-fluid' src={regimg} alt="" />
+           </Col>
+            <Col lg={7} sm={12} md={8} className="login my-4 p-2">
+            <h3 className="my-4 fw-bold regular-family regular-color text-center">Create Account To Travel Treasures
+          </h3>
             <h5 className="text-danger fw-bold">{regerror}</h5>
-                <form onSubmit={SubmitHanlder}>
+                <form className="ms-4" onSubmit={SubmitHanlder} >
                 <Form.Floating className="mb-3 fw-bold text-primary">
                 <Form.Control
                 className="w-75"
@@ -110,7 +114,8 @@ const Register = () => {
             <h4 className='fw-bold'>OR</h4>
                 <p className='springtxt fw-bold my-4'>sign-up with <i onClick={GoogleHandler} className="fab fa-google fa-2x"></i></p>
                 </form>
-                <Link className="fw-bold springtxt fs-6" to="/login">Are You Already Rgister? please Login</Link>
+
+                <Link className="fw-bold springtxt fs-6 ms-4" to="/login">Are You Already Rgister? please Login</Link>
             </Col>
         </Row>
     </div>

@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import useFirebase from '../../Authentication/UseFirebase/UseFirebase';
 
 const Navbars = () => {
-    const {user,LogoutUser} = useFirebase();
+    const {user,LogoutUser, isadmin} = useFirebase();
     const navigate = useNavigate()
     const LogOutHandler = () => {
         LogoutUser(navigate)
@@ -17,12 +17,22 @@ const Navbars = () => {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                 <Nav.Link as={Link} to="/"> <span className='regular-color fw-bold regular-family'>Home</span> </Nav.Link>
-                <Nav.Link as={Link} to="/dashboard"> <span className='regular-color fw-bold regular-family'>Admin DashBoard</span> </Nav.Link>
-                <Nav.Link as={Link} to="/AddYourExperience"> <span className='regular-color fw-bold regular-family'>Add Your Own Experience</span> </Nav.Link>
+                {
+                    isadmin && <Nav.Link as={Link} to="/dashboard"> <span className='regular-color fw-bold regular-family'>Admin DashBoard</span> </Nav.Link>
+                }
+                
+                {
+                    user.email && <Nav.Link as={Link} to="/AddYourExperience"> <span className='regular-color fw-bold regular-family'>Add Your Own Experience</span> </Nav.Link>
+                    
+                }
+                <Nav.Link as={Link} to="/LowerExpense"> <span className='regular-color fw-bold regular-family'>See most-lower expense trip</span> </Nav.Link>
+                <Nav.Link as={Link} to="/TravelAdvise"> <span className='regular-color fw-bold regular-family'>Travel Advise</span> </Nav.Link>
+
                 </Nav>
+                
                 <Nav>
                     {
-                        user.email ? <button onClick={LogOutHandler} className='btn btn-info fw-bold'>LogOut</button> :  <Nav.Link className="bg-warning fw-bold text-dark" as={Link} to="/login">Login</Nav.Link>
+                        user.email ? <button onClick={LogOutHandler} className='btn btn-info fw-bold'>LogOut</button> :  <Nav.Link  as={Link} to="/login"><button className='loginbtn'>Login</button></Nav.Link>
                     }
                     
                 </Nav>
