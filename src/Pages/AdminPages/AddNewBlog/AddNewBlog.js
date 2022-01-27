@@ -35,7 +35,7 @@ const AddNewBlog = () => {
         fd.append('img', img)
         fd.append('description', blogdata.description)
         //uploading to database
-        fetch('http://localhost:5000/addNewBlog', {
+        fetch('https://aqueous-scrubland-04111.herokuapp.com/addNewBlog', {
             method: 'POST',
             body: fd
             })

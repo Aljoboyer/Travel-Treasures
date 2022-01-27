@@ -22,7 +22,7 @@ const Home = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/getTopRatedPlace')
+        fetch('https://aqueous-scrubland-04111.herokuapp.com/getTopRatedPlace')
         .then(res => res.json())
         .then(data => setBlogs(data))
     },[])

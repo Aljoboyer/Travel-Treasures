@@ -9,7 +9,7 @@ const MakeAdmin = () => {
     const  SubmitHandler = e => {
         e.preventDefault()
 
-        fetch(`http://localhost:5000/makeAdmin?email=${email}`,{
+        fetch(`https://aqueous-scrubland-04111.herokuapp.com/makeAdmin?email=${email}`,{
             method: 'PUT',
             headers: {
                 'content-type':'application/json'

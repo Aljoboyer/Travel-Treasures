@@ -9,7 +9,7 @@ const LowerExpense = () => {
 
     
     useEffect(() => {
-        fetch('http://localhost:5000/getLowExpense')
+        fetch('https://aqueous-scrubland-04111.herokuapp.com/getLowExpense')
         .then(res => res.json())
         .then(data => setBlogs(data))
     },[])

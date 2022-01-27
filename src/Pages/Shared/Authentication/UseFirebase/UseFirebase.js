@@ -93,7 +93,7 @@ const useFirebase = () => {
     //saving user to database
     const SaveUser = (email, name) => {
         const newuser = {email, name}
-        fetch('http://localhost:5000/SaveUser', {
+        fetch('https://aqueous-scrubland-04111.herokuapp.com/SaveUser', {
             method: 'POST',
             headers:{
                 'content-type':'application/json'
@@ -106,7 +106,7 @@ const useFirebase = () => {
     //admin checking 
     useEffect(() => {
         if(user.email){
-            fetch(`http://localhost:5000/checkAdmin?email=${user.email}`)
+            fetch(`https://aqueous-scrubland-04111.herokuapp.com/checkAdmin?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setIsadmin(data.isadmin)

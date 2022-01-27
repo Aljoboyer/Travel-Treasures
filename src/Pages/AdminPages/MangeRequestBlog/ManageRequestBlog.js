@@ -7,18 +7,18 @@ const ManageRequestBlog = () => {
     const [blogs, setBlogs] = useState([]);
     const [demo, setDemo] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/getRequestBlog')
+        fetch('https://aqueous-scrubland-04111.herokuapp.com/getRequestBlog')
         .then(res => res.json())
         .then(data => setBlogs(data))
     },[demo])
     
     const ApprovedHandler = (id) => {
-        fetch(`http://localhost:5000/getApprovedBlog/${id}`)
+        fetch(`https://aqueous-scrubland-04111.herokuapp.com/getApprovedBlog/${id}`)
         .then(res => res.json())
         .then(data => {
             if(data._id){
                 delete data['_id'];
-                fetch('http://localhost:5000/ApprovingBlog',{
+                fetch('https://aqueous-scrubland-04111.herokuapp.com/ApprovingBlog',{
                     method: 'POST',
                     headers:{
                         'content-type':'application/json'
@@ -27,7 +27,7 @@ const ManageRequestBlog = () => {
                 })
                 .then(res => res.json())
                 .then(res => {
-                    fetch(`http://localhost:5000/updateRequest/${id}`,{
+                    fetch(`https://aqueous-scrubland-04111.herokuapp.com/updateRequest/${id}`,{
                         method: 'PUT',
                         headers: {
                             'content-type' : 'application/json'

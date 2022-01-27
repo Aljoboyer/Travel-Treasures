@@ -9,7 +9,7 @@ const AllBlog = () => {
     const size = 10;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/getBlogs?page=${pageno}&&size=${size}`)
+        fetch(`https://aqueous-scrubland-04111.herokuapp.com/getBlogs?page=${pageno}&&size=${size}`)
         .then(res => res.json())
         .then(data => {
             if(data)

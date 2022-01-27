@@ -29,7 +29,7 @@ const ManageBlogs = () => {
     const handleShow = () => setShow(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/getingAllBlog')
+        fetch('https://aqueous-scrubland-04111.herokuapp.com/getingAllBlog')
         .then(res => res.json())
         .then(data => setBlogs(data))
     },[demo])
@@ -45,7 +45,7 @@ const ManageBlogs = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/deleteblog/${id}`,{
+                fetch(`https://aqueous-scrubland-04111.herokuapp.com/deleteblog/${id}`,{
                     method: 'DELETE'
                 })
                 .then(res => res.json())
@@ -64,7 +64,7 @@ const ManageBlogs = () => {
       
     }   
     const EditHandler = (id) => {
-        fetch(`http://localhost:5000/getBlogForEdit/${id}`)
+        fetch(`https://aqueous-scrubland-04111.herokuapp.com/getBlogForEdit/${id}`)
         .then(res => res.json())
         .then(data => {
             setEditblog(data)
@@ -84,7 +84,7 @@ const ManageBlogs = () => {
         fd.append('description', editblog.description);
 
                 //uploading to database
-                fetch(`http://localhost:5000/EditedBlog/${editblog._id}`, {
+                fetch(`https://aqueous-scrubland-04111.herokuapp.com/EditedBlog/${editblog._id}`, {
                     method: 'PUT',
                     body: fd
                     })

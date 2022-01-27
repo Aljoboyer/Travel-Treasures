@@ -26,3 +26,17 @@
     color: rgb(255, 225, 0);
     cursor: pointer;
 }
+.travelphotogrpahy-row{
+    background: rgba(0,0,0,0.4) url('../../Image/category-photography.jpg');
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 60vh;
+    width: 100%;
+}
+.photography-title{
+    color: #ff8400;
+    font-weight: 900;
+    font-size: 30px;
+}

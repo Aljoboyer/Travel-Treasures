@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import useFirebase from '../../Authentication/UseFirebase/UseFirebase';
-
+import sitelogo from '../../../../Image/websitelogo.jpg'
 const Navbars = () => {
     const {user,LogoutUser, isadmin} = useFirebase();
     const navigate = useNavigate()
@@ -12,7 +12,7 @@ const Navbars = () => {
     return ( 
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container className='pt-3 pb-3 ps-2 pe-2'>
-            <Navbar.Brand as={Link} to="/"> <span  className='regular-color fw-bold regular-family fs-4'>Travel Treasures</span> </Navbar.Brand>
+            <Navbar.Brand as={Link} to="/"> <span  className='regular-color fw-bold regular-family fs-4'> <img className="w-25 sitelogo" src={sitelogo} alt=""/> Treasures</span> </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
@@ -27,6 +27,7 @@ const Navbars = () => {
                 }
                 <Nav.Link as={Link} to="/LowerExpense"> <span className='regular-color fw-bold regular-family'>See most-lower expense trip</span> </Nav.Link>
                 <Nav.Link as={Link} to="/TravelAdvise"> <span className='regular-color fw-bold regular-family'>Travel Advise</span> </Nav.Link>
+                <Nav.Link as={Link} to="/TravelPhotography"> <span className='regular-color fw-bold regular-family'>Travel Photography</span> </Nav.Link>
 
                 </Nav>
                 

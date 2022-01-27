@@ -20,6 +20,7 @@ import Privateroute from './PrivateRoute/PrivateRoute';
 import Footer from './Pages/Shared/HomePages/Footer/Footer';
 import LowerExpense from './Pages/UserPages/LowerExpense/LowerExpense';
 import TravelAdvise from './Pages/UserPages/TravelAdvise/TravelAdvise';
+import TravelPhotography from './Pages/UserPages/TravelPhotography/TravelPhotography';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path="/LowerExpense" element={<LowerExpense/>} />
             <Route path="/TravelAdvise" element={<TravelAdvise/>} />
+            <Route path="/TravelPhotography" element={<TravelPhotography/>} />
 
   {/* ----------------admin routes------------------- */}
             <Route path="/dashboard" element={<AdminDashBoard/>}>

@@ -41,7 +41,7 @@ const AddYourExperience = () => {
         fd.append('description', blogdata.description)
         fd.append('rate', rates)
         //uploading to database
-        fetch('http://localhost:5000/ShareExperience', {
+        fetch('https://aqueous-scrubland-04111.herokuapp.com/ShareExperience', {
             method: 'POST',
             body: fd
             })
